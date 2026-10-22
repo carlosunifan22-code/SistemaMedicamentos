@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" prefHeight="700.0" prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.sistemamedicamentos.controller.MedicamentosController">
+   <content>
+      <VBox spacing="10.0">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+         </padding>
+         <children>
+
+            <Label text="Sistema de Gerenciamento de Medicamentos">
+               <font>
+                  <Font name="System Bold" size="24.0"/>
+               </font>
+            </Label>
+
+            <HBox spacing="15.0">
+               <children>
+                  <TextField fx:id="txtNome" promptText="Nome do medicamento" prefWidth="400.0"/>
+                  <TextField fx:id="txtCodigo" promptText="Código (7 caracteres)" prefWidth="250.0"/>
+               </children>
+            </HBox>
+
+            <TextField fx:id="txtDescricao" promptText="Descrição"/>
+            <TextField fx:id="txtPrincipioAtivo" promptText="Princípio ativo"/>
+            <DatePicker fx:id="dpValidade" promptText="Data de validade"/>
+            <TextField fx:id="txtQuantidade" promptText="Quantidade em estoque"/>
+            <TextField fx:id="txtPreco" promptText="Preço (R$)"/>
+            <CheckBox fx:id="chkControlado" text="Medicamento controlado"/>
+
+            <Label text="Dados do Fornecedor">
+               <font>
+                  <Font name="System Bold" size="14.0"/>
+               </font>
+            </Label>
+
+            <TextField fx:id="txtCnpj" promptText="CNPJ do fornecedor"/>
+            <TextField fx:id="txtRazaoSocial" promptText="Razão social do fornecedor"/>
+            <TextField fx:id="txtTelefone" promptText="Telefone do fornecedor"/>
+            <TextField fx:id="txtEmail" promptText="E-mail do fornecedor"/>
+            <TextField fx:id="txtCidade" promptText="Cidade do fornecedor"/>
+            <TextField fx:id="txtEstado" promptText="Estado do fornecedor (UF)"/>
+
+            <HBox spacing="10.0">
+               <children>
+                  <Button fx:id="btnCadastrar" text="Cadastrar medicamento" onAction="#onCadastrar"/>
+                  <Button fx:id="btnLimpar" text="Limpar campos" onAction="#onLimpar"/>
+               </children>
+            </HBox>
+
+            <Label text="Medicamentos cadastrados">
+               <font>
+                  <Font name="System Bold" size="14.0"/>
+               </font>
+            </Label>
+
+            <TableView fx:id="tabelaMedicamentos" prefHeight="250.0" prefWidth="970.0">
+               <columns>
+                  <TableColumn fx:id="colCodigo" text="Código" prefWidth="110.0"/>
+                  <TableColumn fx:id="colNome" text="Medicamento" prefWidth="200.0"/>
+                  <TableColumn fx:id="colPrincipioAtivo" text="Princípio ativo" prefWidth="170.0"/>
+                  <TableColumn fx:id="colValidade" text="Validade" prefWidth="120.0"/>
+                  <TableColumn fx:id="colQuantidade" text="Quantidade" prefWidth="110.0"/>
+                  <TableColumn fx:id="colPreco" text="Preço (R$)" prefWidth="110.0"/>
+                  <TableColumn fx:id="colControlado" text="Controlado" prefWidth="110.0"/>
+               </columns>
+            </TableView>
+
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="txtPesquisa" promptText="Pesquisar pelo código" prefWidth="300.0"/>
+                  <Button fx:id="btnPesquisar" text="Pesquisar" onAction="#onPesquisar"/>
+                  <Button fx:id="btnExcluir" text="Excluir medicamento" onAction="#onExcluir"/>
+                  <Button fx:id="btnAtualizar" text="Atualizar lista" onAction="#onAtualizar"/>
+                  <Button fx:id="btnRelatorios" text="Relatórios" onAction="#onRelatorios"/>
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
